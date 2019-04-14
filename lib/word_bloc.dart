@@ -30,9 +30,13 @@ class WordBloc {
 
   WordBloc() {
     _wordAdditionController.stream.listen((addition) {
+      print('1: WordAddition : ${addition.name}');
+      print('2: _word.itemCount : ${_word.itemCount}');
       int currentCount = _word.itemCount;
       _word.add(addition.name);
       _items.add(_word.items);
+      print('6: _word: $_word');
+      print('7: _word.itemCount: ${_word.itemCount}');
       int updateCount = _word.itemCount;
       if (updateCount != currentCount) {
         _itemCount.add(updateCount); // 更新

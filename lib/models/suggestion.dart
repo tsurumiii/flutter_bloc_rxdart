@@ -1,7 +1,7 @@
 import 'dart:collection';
 import 'package:english_words/english_words.dart';
 
-final Suggestion suggetion = Suggestion();
+final Suggestion suggestion = Suggestion();
 
 class Suggestion {
   final List<WordPair> _suggestedWords = <WordPair>[];

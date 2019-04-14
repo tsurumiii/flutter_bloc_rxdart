@@ -15,6 +15,7 @@ class Word {
   UnmodifiableListView<WordItem> get items => UnmodifiableListView(_items);
 
   void add(String name) {
+    print('3: word.add $name');
     _updateCountAdd(name);
   }
 
@@ -29,13 +30,15 @@ class Word {
   }
 
   void _updateCountAdd(String name) {
+    print('4:  _updateCountAdd $name');
     for (int i = 0; i < _items.length; i++) {
       final item = _items[i];
       if (name == item.name) {
         return;
       }
-      _items.add(WordItem(name));
     }
+    _items.add(WordItem(name));
+    print('5: _items.length: ${_items.length}');
   }
 
   void _updateRemove(String name) {
