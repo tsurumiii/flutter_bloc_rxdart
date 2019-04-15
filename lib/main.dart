@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
@@ -7,8 +9,12 @@ import './word_bloc.dart';
 import './models/word_item.dart';
 import './models/suggestion.dart';
 import './widgets/count_label.dart';
+import 'package:xml2json/xml2json.dart';
+import 'package:http/http.dart' as http;
 
 void main() => runApp(MyApp());
+
+Xml2Json xml2json = new Xml2Json();
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

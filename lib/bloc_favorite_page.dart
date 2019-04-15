@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import './models/word_item.dart';
 import './word_provider.dart';
 
@@ -22,7 +23,12 @@ class BlocFavoritePage extends StatelessWidget {
               width: width,
               child: Container(
                 alignment: Alignment.center,
-                child: Text('まだお気に入りに追加されてません。'),
+                child: Column(
+                  children: <Widget>[
+                    Text('まだお気に入りに追加されてません。'),
+                    _svgImage(context),
+                  ],
+                ),
               ),
             );
           }
@@ -44,4 +50,17 @@ class BlocFavoritePage extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _svgImage(BuildContext context) {
+  final String assetName = 'images/codecov.svg';
+  return Container(
+    padding: EdgeInsets.all(20),
+    height: 200,
+    width: 200,
+    child: SvgPicture.asset(
+      assetName,
+      color: Colors.amber,
+    ),
+  );
 }
